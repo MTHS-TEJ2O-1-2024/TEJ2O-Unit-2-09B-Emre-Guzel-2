@@ -10,7 +10,7 @@ let score: number = 0
 basic.clearScreen()
 basic.showIcon(IconNames.Happy)
 
-input.onGesture(Gesture.Shake,function(){
+input.onGesture(Gesture.Shake, function () {
     // Picking a ramdom number 
     let ramdomNumber: number = 0
     ramdomNumber = -1
@@ -24,13 +24,13 @@ input.onGesture(Gesture.Shake,function(){
         basic.showIcon(IconNames.Happy)
     }
     // Paper
-    if(ramdomNumber ==1){
+    if (ramdomNumber == 1) {
         basic.showIcon(IconNames.Square)
         pause(5000)
         basic.showIcon(IconNames.Happy)
     }
     // Scissors
-    if(ramdomNumber ==2){
+    if (ramdomNumber == 2) {
         basic.showIcon(IconNames.Scissors)
         pause(5000)
         basic.showIcon(IconNames.Happy)
@@ -38,14 +38,16 @@ input.onGesture(Gesture.Shake,function(){
 
 })
 // Save the scroe
-input.onButtonPressed(Button.A,function() { 
+input.onButtonPressed(Button.A, function () {
     basic.showIcon(IconNames.Yes)
-    score +=1
+    score += 1
+    pause(5000)
+    basic.showIcon(IconNames.Happy)
 })
 
 // Show score 
-input.onButtonPressed(Button.B,function (){
-basic.showString(" Score:"), + basic.showNumber(score) 
-basic.showIcon(IconNames.Happy)
+input.onButtonPressed(Button.B, function () {
+    basic.clearScreen()
+    basic.showString(" Score:"), + basic.showNumber(score)
+    basic.showIcon(IconNames.Happy)
 })
-
